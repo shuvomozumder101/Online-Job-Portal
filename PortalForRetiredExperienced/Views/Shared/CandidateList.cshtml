@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PortalForRetiredExperienced.Models.CandidateListModel>
+
+@{
+    ViewData["Title"] = "CandidateList";
+}
+
+<section class="profile-area profile-area-two pt-100">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-lg-3">
+                    <div class="profile-item wow fadeInUp" data-wow-delay=".3s">
+                        <img src="~/Design/img/MyProfile.jpg" alt="Profile">
+                        <div class="profile-inner">
+                            <h3>
+                                @Html.DisplayFor(modelItem => item.CandidateName)
+                            </h3>
+                            <span>Business Consultant</span>
+                            <h3>
+                                @Html.DisplayFor(modelItem => item.Profession)
+                            </h3>
+                            <a href="candidate-details.html">
+                                <h3>
+                                    @Html.DisplayFor(modelItem => item.ProfileLink)
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
